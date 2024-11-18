@@ -1,5 +1,7 @@
  
  
+ 
+ 
   document.getElementById("contactForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the form from submitting the traditional way
 
@@ -35,6 +37,37 @@
  
  
 document.addEventListener("DOMContentLoaded", () => {
+	
+	  // hamburgerMenu click
+
+  const hamburger = document.getElementById('hamburgerMenu');
+        const navLinks = document.getElementById('navLinks');
+        const overlay = document.getElementById('navOverlay');
+        const menuItems = navLinks.getElementsByTagName('a');
+
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', 
+                hamburger.classList.contains('active'));
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking a link
+        Array.from(menuItems).forEach(item => {
+            item.addEventListener('click', toggleMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+	
   // Animation functions
   const animateElements = (elements) => {
     elements.forEach((el, index) => {
