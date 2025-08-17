@@ -136,6 +136,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Data
    const courses = [
+	    {
+		    icon: "fas fa-database",
+		    title: "Database Structures and Management with MySQL",
+		    date: "2023",
+		    provider: "Udemy"
+		},
         {
           icon: "fas fa-mobile-alt",
           title: "Flutter Advanced Course: Bloc and MVVM Pattern",
