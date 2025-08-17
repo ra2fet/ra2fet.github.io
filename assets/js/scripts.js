@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	    {
 		    icon: "fas fa-database",
 		    title: "Database Structures and Management with MySQL",
-		    date: "2023",
+		    date: "Jul 2025",
 		    provider: "Udemy"
 		},
         {
